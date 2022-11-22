@@ -25,13 +25,13 @@ restaurantsData.restaurants.forEach(item => {
   posts.innerHTML += `
     <article class="post-item" id="${item.id}">
       <div class="post-item__thumbnail">
-        <p class="post-item__city">Kota ${item.city}</p>
+        <p class="post-item__city" tabindex="0">Kota ${item.city}</p>
         <img class="post-item__image" src="${item.pictureId}" alt="${item.name} Restaurant">
       </div>
       <div class="post-item__content">
-        <p class="post-item__rating">Rating: ${item.rating}</p>
+        <p class="post-item__rating" tabindex="0">Rating: ${item.rating}</p>
         <h1 class="post-item__title"><a href="#">${item.name}</a></h1>
-        <p class="post-item__description">${item.description}</p>
+        <p class="post-item__description" tabindex="0">${item.description}</p>
       </div>
     </article>
   `;
