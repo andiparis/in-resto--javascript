@@ -2,47 +2,50 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Font Styles -->
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" type="text/css">
+  <meta name="description" content="Free restaurant catalogue for you">
+  <meta name="theme-color" content="#2c3e50"/>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="apple-touch-icon" href="/icons/icon-192x192.png">
+  <link rel="icon" href="./favicon.png">
+  <link rel="manifest" href="./app.webmanifest">
+  <script src="https://use.fontawesome.com/b070c8f1df.js"></script>
+  
   <title>InResto</title>
 </head>
 <body>
-  <a href="#maincontent" class="skip-link">Menuju ke konten</a>
+  <a href="#mainContent" class="skip-link">Skip to content</a>
 
-  <header class="header">
-    <div class="header__inner">
-      <h1 class="header__title">InResto</h1>
-
-      <button id="menu" class="header__menu">☰</button>
-      <nav class="nav">
-        <ul id="drawer" class="nav__list">
-          <li class="nav__item"><a href="/">Home</a></li>
-          <li class="nav__item"><a href="#">Favorite</a></li>
-          <li class="nav__item"><a href="https://www.linkedin.com/in/andi-paris-b-871960141/">About</a></li>
-        </ul>
-      </nav>
+  <header class="app-bar">
+    <div class="app-bar__menu">
+      <button id="hamburgerButton">☰</button>
     </div>
+    <div class="app-bar__brand">
+      <h1>InResto</h1>
+    </div>
+    <nav id="navigationDrawer" class="app-bar__navigation">
+      <ul>
+        <li><a href="#/home">Home</a></li>
+        <li><a href="#/like">Liked Resto</a></li>
+      </ul>
+    </nav>
   </header>
 
   <div class="hero">
     <div class="hero__inner">
-      <h1 class="hero__title">Ayo Carik Jajan</h1>
+      <h1 class="hero__title">Let's Get Some Snacks</h1>
     </div>
   </div>
 
-  <main id="maincontent">
-    <section class="content">
-      <div class="latest">
-        <h1 class="latest__label">Jelajah Restaurant</h1>
-        <div class="posts"></div>
-      </div>
-    </section>
-  </main>
-
+  <main id="mainContent"></main>
+  
   <footer>
-    <p>Copyright &copy; 2020 - InResto</p>
+    <div id="footerTools">
+      <button id="subscribePushNotification" class="btn">Subscribe Push Notification</button>
+      <button id="unsubscribePushNotification" class="btn">Unsubscribe Push Notification</button>
+    </div>
+    <p>All data obtained from <a href="https://restaurant-api.dicoding.dev/" target="_blank" rel="noreferrer">DicodingAPI</a></p>
   </footer>
 </body>
 </html>
