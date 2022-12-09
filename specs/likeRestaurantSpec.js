@@ -10,6 +10,7 @@ describe('Liking A Restaurant', () => {
     addLikeButtonContainer();
   });
 
+  // Positive scenario
   it('should show the like button when the restaurant has not been liked before', async () => {
     await TestFactories.createLikeButtonPresenterWithRestaurant({ id: 1 });
 
@@ -32,6 +33,7 @@ describe('Liking A Restaurant', () => {
     FavoriteRestaurantIdb.deleteRestaurant(1);
   });
 
+  // Negatif
   it('should not add a restaurant again when its already liked', async () => {
     await TestFactories.createLikeButtonPresenterWithRestaurant({ id: 1 });
 
@@ -42,6 +44,7 @@ describe('Liking A Restaurant', () => {
     FavoriteRestaurantIdb.deleteRestaurant(1);
   });
 
+  // Use xit to skip the test
   it('should not add a restaurant when it has no id', async () => {
     await TestFactories.createLikeButtonPresenterWithRestaurant({});
 

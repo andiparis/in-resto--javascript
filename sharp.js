@@ -3,11 +3,11 @@ const fs = require('fs');
 const path = require('path');
 
 const target = path.resolve(__dirname, 'src/public/images/heros');
-const buildFoler = path.resolve(__dirname, 'dist');
+const buildFolder = path.resolve(__dirname, 'dist');
 const destination = path.resolve(__dirname, 'dist/images');
 
-if (!fs.existsSync(buildFoler)) {
-  fs.mkdirSync(buildFoler);
+if (!fs.existsSync(buildFolder)) {
+  fs.mkdirSync(buildFolder);
 }
 
 if (!fs.existsSync(destination)) {
@@ -16,7 +16,7 @@ if (!fs.existsSync(destination)) {
 
 fs.readdirSync(target).forEach((image) => {
   sharp(`${target}/${image}`)
-    .resize(1200)
+    .resize(1300)
     .toFile(path.resolve(
       __dirname,
       `${destination}/${image.split('.').slice(0, -1).join('.')}-large.jpg`,

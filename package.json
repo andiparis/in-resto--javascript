@@ -4,11 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start-dev": "webpack serve --config webpack.dev.js",
     "build-image": "node sharp.js",
+    "start-dev": "npm run build-image && webpack serve --config webpack.dev.js",
     "build": "npm run build-image && webpack --config webpack.prod.js",
     "serve": "http-server dist --port 9000",
-    "build-serve": "npm run build && npm run serve",
     "test": "karma start",
     "e2e": "codeceptjs run --steps"
   },

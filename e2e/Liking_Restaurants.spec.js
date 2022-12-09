@@ -47,7 +47,7 @@ Scenario('unlike one restaurant', async ({ I }) => {
   I.amOnPage('/#/like');
   I.seeElement('.restaurant-item');
 
-  const likedRestaurantTitle = await I.grabTextFrom('.restaurant__title');
+  const likedRestaurantTitle = await I.grabTextFrom('.restaurant__title a');
   assert.strictEqual(firstRestaurantTitle, likedRestaurantTitle);
 
   const firstLike = locate('.restaurant__title a').first();
