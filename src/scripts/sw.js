@@ -8,30 +8,6 @@ self.addEventListener('install', () => {
   self.skipWaiting();
 });
 
-self.addEventListener('push', (event) => {
+self.addEventListener('push', () => {
   console.log('Service Worker: Pushed');
-
-  const dataJson = event.data.json();
-  const notification = {
-    title: dataJson.title,
-    options: {
-      body: dataJson.options.body,
-      icon: dataJson.options.icon,
-      image: dataJson.options.image,
-    },
-  };
-
-  event.waitUntil(self.registration.showNotification(notification.title, notification.options));
-});
-
-self.addEventListener('notificationclick', (event) => {
-  const clickedNotification = event.notification;
-  clickedNotification.close();
-
-  const chainPromise = async () => {
-    console.log('Notification has been clicked');
-    await self.clients.openWindow('https://www.dicoding.com/');
-  };
-
-  event.waitUntil(chainPromise());
 });
